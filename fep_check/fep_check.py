@@ -29,7 +29,7 @@ model_path = os.path.abspath(os.path.dirname(__file__))
 MSID = dict(fep1mong='TMP_FEP1_MONG')
 # This is the Yellow High IPCL limit.
 # 05/2014 - changed from 35.0 to 37.5
-YELLOW = dict(dpa=45.0)
+YELLOW = dict(fep1mong=45.0)
 # This is the difference between the Yellow High IPCL limit and 
 # the Planning Limit. So the Planning Limit is YELLOW - MARGIN
 #
@@ -42,7 +42,7 @@ YELLOW = dict(dpa=45.0)
 #          testing.  So for now the planning limit will be 34.5 deg. C.
 # 09/19/14 - Set MARGIN to 2.0 so that the Planning Limit is now 
 #            35.5 deg. C
-MARGIN = dict(dpa=2.0)
+MARGIN = dict(fep1mong=2.0)
 # 12/5/13 - Likewise the 1DPAMZT validation limits were reduced to 2.0 
 #           from 2.5 for the 1% and 99% quantiles
 VALIDATION_LIMITS = {'TMP_FEP1_MONG': [(1, 2.0),
@@ -56,12 +56,12 @@ VALIDATION_LIMITS = {'TMP_FEP1_MONG': [(1, 2.0),
 HIST_LIMIT = [20.]
 
 def calc_model(model_spec, states, start, stop, T_fep=None, T_fep_times=None):
-    model = xija.ThermalModel(short_msid, start=start, stop=stop,
+    model = xija.ThermalModel('fep1mong', start=start, stop=stop,
                               model_spec=model_spec)
     times = np.array([states['tstart'], states['tstop']])
     model.comp['sim_z'].set_data(states['simpos'], times)
     model.comp['eclipse'].set_data(False)
-    model.comp[msid].set_data(T_fep, T_fep_times)
+    model.comp['tmp_fep1_mong'].set_data(T_fep, T_fep_times)
     model.comp['roll'].set_data(calc_off_nom_rolls(states), times)
     for name in ('ccd_count', 'fep_count', 'vid_board', 'clocking', 'pitch'):
         model.comp[name].set_data(states[name], times)

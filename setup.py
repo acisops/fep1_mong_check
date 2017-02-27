@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup
-from dpa_check import __version__
+from fep_check import __version__
 
 entry_points = {'console_scripts': 'fep_check = fep_check.fep_check:main'}
 
