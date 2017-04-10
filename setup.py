@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup
-from fep_check import __version__
+from fep1mong_check import __version__
 
 entry_points = {'console_scripts': 'fep1mong_check = fep1mong_check.fep1mong_check:main'}
 
