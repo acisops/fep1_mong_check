@@ -1,1 +1,1 @@
-include dpa_check/dpa_model_spec.json
+include fep1mong_check/fep1mong_model_spec.json
