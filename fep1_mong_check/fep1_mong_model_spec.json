@@ -236,7 +236,7 @@
     "datestop": "2017:097:23:51:52.816", 
     "dt": 328.0, 
     "gui_config": {
-        "filename": "/home/jzuhone/Source/fep_check/fep_check/fep1mong_model_spec.json", 
+        "filename": "/home/jzuhone/Source/fep1_mong_check/fep1_mong_check/fep1_mong_model_spec.json",
         "plot_names": [
             "tmp_fep1_mong data__time", 
             "pitch data__time", 
@@ -249,7 +249,7 @@
         ]
     }, 
     "mval_names": [], 
-    "name": "fep1mong", 
+    "name": "fep1_mong", 
     "pars": [
         {
             "comp_name": "mask__tmp_fep1_mong_gt", 

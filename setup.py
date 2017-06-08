@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 from setuptools import setup
-from fep1mong_check import __version__
+from fep1_mong_check import __version__
 
-entry_points = {'console_scripts': 'fep1mong_check = fep1mong_check.fep1mong_check:main'}
+entry_points = {'console_scripts': 'fep1_mong_check = fep1_mong_check.fep1_mong_check:main'}
 
-url = 'https://github.com/acisops/fep1mong_check/tarball/{}'.format(__version__)
+url = 'https://github.com/acisops/fep1_mong_check/tarball/{}'.format(__version__)
 
-setup(name='fep1mong_check',
-      packages=["fep1mong_check"],
+setup(name='fep1_mong_check',
+      packages=["fep1_mong_check"],
       version=__version__,
       description='ACIS Thermal Model for FEP1 Mongoose Temperature',
       author='John ZuHone',
       author_email='jzuhone@gmail.com',
-      url='http://github.com/acisops/fep1mong_check',
+      url='http://github.com/acisops/fep1_mong_check',
       download_url=url,
       include_package_data=True,
       classifiers=[

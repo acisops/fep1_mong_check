@@ -1,5 +1,5 @@
 build
 dist
 *.pyc
-fep1mong_check.egg-info
+fep1_mong_check.egg-info
 doc/_build
