@@ -29,7 +29,7 @@ model_path = os.path.abspath(os.path.dirname(__file__))
 MSID = dict(fep1_mong='TMP_FEP1_MONG')
 # This is the Yellow High IPCL limit.
 # 05/2014 - changed from 35.0 to 37.5
-YELLOW = dict(fep1_mong=45.0)
+YELLOW = dict(fep1_mong=49.0)
 # This is the difference between the Yellow High IPCL limit and 
 # the Planning Limit. So the Planning Limit is YELLOW - MARGIN
 #
