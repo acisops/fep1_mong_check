@@ -75,11 +75,11 @@ fep1_mong_check = ACISThermalCheck("tmp_fep1_mong", "fep1_mong", MSID,
                                   HIST_LIMIT, calc_model)
 
 def main():
-    opt, args = get_options("TMP_FEP1_MONG", "fep1_mong", model_path)
+    args = get_options("TMP_FEP1_MONG", "fep1_mong", model_path)
     try:
-        fep1_mong_check.driver(opt)
+        fep1_mong_check.driver(args)
     except Exception as msg:
-        if opt.traceback:
+        if args.traceback:
             raise
         else:
             print("ERROR:", msg)
