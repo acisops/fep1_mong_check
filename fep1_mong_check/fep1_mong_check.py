@@ -24,7 +24,7 @@ from acis_thermal_check import \
     ACISThermalCheck, \
     calc_off_nom_rolls, \
     get_options, \
-    state_builders, \
+    state_builders
 import os
 
 model_path = os.path.abspath(os.path.dirname(__file__))
