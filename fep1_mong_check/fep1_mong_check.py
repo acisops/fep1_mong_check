@@ -24,7 +24,7 @@ from acis_thermal_check import \
     ACISThermalCheck, \
     calc_off_nom_rolls, \
     get_options, \
-    state_builders
+    make_state_builder
 import os
 
 model_path = os.path.abspath(os.path.dirname(__file__))
@@ -55,12 +55,12 @@ def calc_model(model_spec, states, start, stop, T_fep=None, T_fep_times=None):
 
 def main():
     args = get_options("fep1_mong", model_path)
-    fep1_mong_check = ACISThermalCheck("tmp_fep1_mong", "fep1_mong",
-                                       state_builders[args.state_builder], MSID,
+    state_builder = make_state_builder(args.state_builder, args)
+    fep1_mong_check = ACISThermalCheck("tmp_fep1_mong", "fep1_mong", MSID,
                                        YELLOW, MARGIN, VALIDATION_LIMITS,
                                        HIST_LIMIT, calc_model)
     try:
-        fep1_mong_check.driver(args)
+        fep1_mong_check.driver(args, state_builder)
     except Exception as msg:
         if args.traceback:
             raise
