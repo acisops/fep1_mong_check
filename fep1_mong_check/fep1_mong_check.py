@@ -24,13 +24,16 @@ from acis_thermal_check import \
     ACISThermalCheck, \
     calc_off_nom_rolls, \
     get_options, \
-    make_state_builder
+    make_state_builder, \
+    get_acis_limits
 import os
 
 model_path = os.path.abspath(os.path.dirname(__file__))
 
+yellow_hi, red_hi = get_acis_limits("tmp_fep1_mong")
+
 MSID = {"fep1_mong":'TMP_FEP1_MONG'}
-YELLOW = {"fep1_mong": 49.0}
+YELLOW = {"fep1_mong": yellow_hi}
 MARGIN = {"fep1_mong": 2.0}
 VALIDATION_LIMITS = {'TMP_FEP1_MONG': [(1, 2.0), (50, 1.0), (99, 2.0)],
                      'PITCH': [(1, 3.0), (99, 3.0)],
