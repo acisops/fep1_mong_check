@@ -54,7 +54,7 @@ def main():
     args = get_options("fep1_mong", model_path)
     fep1_mong_check = ACISThermalCheck("tmp_fep1_mong", "fep1_mong",
                                        VALIDATION_LIMITS, HIST_LIMIT,
-                                       calc_model)
+                                       calc_model, args)
     try:
         fep1_mong_check.run()
     except Exception as msg:
