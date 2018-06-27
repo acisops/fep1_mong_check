@@ -28,11 +28,11 @@ import os
 
 model_path = os.path.abspath(os.path.dirname(__file__))
 
-VALIDATION_LIMITS = {'TMP_FEP1_MONG': [(1, 2.0), (50, 1.0), (99, 2.0)],
+validation_limits = {'TMP_FEP1_MONG': [(1, 2.0), (50, 1.0), (99, 2.0)],
                      'PITCH': [(1, 3.0), (99, 3.0)],
                      'TSCPOS': [(1, 2.5), (99, 2.5)]
                      }
-HIST_LIMIT = [25.0, 20.0] # First limit is >=, second limit is <=
+hist_limit = [25.0, 20.0] # First limit is >=, second limit is <=
 
 def calc_model(model_spec, states, start, stop, T_fep=None, T_fep_times=None,
                dh_heater=None, dh_heater_times=None):
@@ -53,7 +53,7 @@ def calc_model(model_spec, states, start, stop, T_fep=None, T_fep_times=None,
 def main():
     args = get_options("fep1_mong", model_path)
     fep1_mong_check = DPABoardTempCheck("tmp_fep1_mong", "fep1_mong",
-                                        VALIDATION_LIMITS, HIST_LIMIT,
+                                        validation_limits, hist_limit,
                                         calc_model, args)
     try:
         fep1_mong_check.run()
