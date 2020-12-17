@@ -3,3 +3,7 @@ dist
 *.pyc
 fep1_mong_check.egg-info
 doc/_build
+fep1_mong_check/tests/answers/*/*[.png, .csv, .css]
+fep1_mong_check/tests/answers/*/index.*
+fep1_mong_check/tests/answers/*/run.dat
+
